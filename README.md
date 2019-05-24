@@ -12,12 +12,20 @@ En effet, cette touche produit alors indifféremment le caractère `²`, avec ou
 2. On peut aussi envisager d'implémenter la nouvelle norme AFNOR, NFZ71-300, qui étend les possibilités du clavier AZERTY pour permettre une saisie complète et facile des caractères de la typographie française.
 
 + La première correction basique sera donc appelée TWEAK_MIN.
-+ La seconde sera appelée TWEAK_NF-Z71-300 et permettra d'étendre les possibilités du clavier. Dans ce cas, en attendant une évolution compatible de la disposition imprimée du clavier, vous pouvez commander ou créer vous-même vos étiquettes compatibles avec le clavier AZERTY amélioré.
++ La seconde sera appelée TWEAK_NF-Z71-300 et permettra d'étendre les possibilités du clavier. Dans ce cas, en attendant une évolution compatible de la disposition imprimée du clavier, vous pouvez [commander](https://www.tastaturaufkleber.eu/Tastaturaufkleber/Tastaturaufkleber-PC/Franzoesisch/Tastaturaufkleber-Franzoesisch-AZERTY-ameliore::286.html) ou créer vous-même vos étiquettes compatibles avec le clavier AZERTY amélioré (voir les références ci-dessous).
 
 ## Références
-<https://normalisation.afnor.org/actualites/faq-clavier-francais/>
 
-# Quelle méthode est envisagée ?
++ Sur le site de l'AFNOR : <https://normalisation.afnor.org/actualites/faq-clavier-francais/>
++ Site dédié : <http://norme-azerty.fr/>
+
+## Étiquettes compatibles avec le clavier AZERTY amélioré, à imprimer soi-même...
+
++ <https://github.com/marcbal/Printable-AZERTY-NF>
++ 
+(...)
+
+# Quelle méthode d'ajustement est envisagée ?
 Il s'agit, après sauvegarde, de modifier la disposition pc105 proposée dans la configuration X11 du clavier en lien avec la variante French. Pour y parvenir, on utilisera des fichiers de configuration et des scripts Bash.
 Une fois les modifications effectuées, il s'agit de rendre la chose transparente pour l'utilisateur : aucun script inhabituel ne doit être exécuté au démarrage.
 Il doit être enfin possible de revenir en arrière et de supprimer toutes les modifications effectuées. C'est pourquoi la démarche doit s'appuyer au final sur un paquet standard de la distribution.
