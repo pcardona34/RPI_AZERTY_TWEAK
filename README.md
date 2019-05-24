@@ -8,11 +8,11 @@ En effet, cette touche produit alors indifféremment le caractère `²`, avec ou
 
 # Quels niveaux de correction sont envisagés ?
 
-1. On peut d'abord envisager un niveau de correction élémentaire : faire en sorte que la touche en question, `@ #` produise les caractères attendus.
+1. On peut d'abord envisager un niveau de correction élémentaire : faire en sorte que la touche en question, `@ #` produise la saisie des caractères attendus.
 2. On peut aussi envisager d'implémenter la nouvelle norme AFNOR, NFZ71-300, qui étend les possibilités du clavier AZERTY pour permettre une saisie complète et facile des caractères de la typographie française.
 
-+ La première correction basique sera donc appelée TWEAK_MIN.
-+ La seconde sera appelée TWEAK_NF-Z71-300 et permettra d'étendre les possibilités du clavier. Dans ce cas, en attendant une évolution compatible de la disposition imprimée du clavier, vous pouvez [commander](https://www.tastaturaufkleber.eu/Tastaturaufkleber/Tastaturaufkleber-PC/Franzoesisch/Tastaturaufkleber-Franzoesisch-AZERTY-ameliore::286.html) ou créer vous-même vos étiquettes compatibles avec le clavier AZERTY amélioré (voir les références ci-dessous).
++ La première correction basique sera donc appelée TWEAK_RPI_MIN.
++ La seconde sera appelée TWEAK_RPI_NF-Z71-300 et permettra d'étendre les possibilités du clavier. Dans ce cas, en attendant une évolution compatible de la disposition imprimée du clavier, vous pouvez [commander](https://www.tastaturaufkleber.eu/Tastaturaufkleber/Tastaturaufkleber-PC/Franzoesisch/Tastaturaufkleber-Franzoesisch-AZERTY-ameliore::286.html) ou créer vous-même vos étiquettes compatibles avec le clavier AZERTY amélioré (voir les références ci-dessous).
 
 ## Références
 
@@ -26,9 +26,9 @@ En effet, cette touche produit alors indifféremment le caractère `²`, avec ou
 (...)
 
 # Quelle méthode d'ajustement est envisagée ?
-Il s'agit, après sauvegarde, de modifier la disposition pc105 proposée dans la configuration X11 du clavier en lien avec la variante French. Pour y parvenir, on utilisera des fichiers de configuration et des scripts Bash.
+Il s'agit, après sauvegarde, de modifier la disposition d'un clavier standard pc105 (cf. la présence de la touche `< >`) en allant ajuster dans la configuration de X11 la variante `Unicode French derivative` (à partir de la ligne 99) et notamment de corriger la ligne 136 associée à la touche `TLDE` pour lui affecter les caractères `at` (niveau 1) et `signnumber` (niveau deux). Pour y parvenir, on utilisera un fichier de configuration alternatif et des scripts Bash pour effectuer les opérations d'installation (sauvegarde de la table standard, substitution) ou de désinstallation (rétablissement de la table standard).
 Une fois les modifications effectuées, il s'agit de rendre la chose transparente pour l'utilisateur : aucun script inhabituel ne doit être exécuté au démarrage.
-Il doit être enfin possible de revenir en arrière et de supprimer toutes les modifications effectuées. C'est pourquoi la démarche doit s'appuyer au final sur un paquet standard de la distribution.
+Il doit être enfin possible de revenir en arrière et de supprimer toutes les modifications effectuées simplement. C'est pourquoi la démarche doit s'appuyer au final sur un paquet standard de la distribution.
 
 # Quand le code sera-t-il disponible ?
 + Travail en cours... (Work in progress)
