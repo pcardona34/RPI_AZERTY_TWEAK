@@ -18,7 +18,7 @@ if [ $exitstatus = 0 ]; then
 	;;
 	"TWEAK_NF-Z71-300")
 		# On appelle le script d'apllication de la norme AFNOR, Azerty amélioré
-		./cherhche.sh "AFNOR"
+		./cherche.sh "AFNOR"
 	;;
 esac
 
