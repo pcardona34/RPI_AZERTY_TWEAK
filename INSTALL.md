@@ -12,9 +12,9 @@ La commande suivante doit retourner un résultat :
 
 2. Assurez-vous d'avoir au préalable choisi la variante alternative
 de la disposition française du clavier en exécutant l'utilitaire de 
-configuration de raspbian :
+configuration de _raspbian_ :
 
-     		pi@raspberrypi: sudo raspi_config
+     		pi@raspberrypi: sudo raspi-config
 
 Puis sélectionnez l'item :  
 
