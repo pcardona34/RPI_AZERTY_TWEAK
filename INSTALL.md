@@ -7,6 +7,7 @@ Pour ce faire, ouvrez un terminal...
 La commande suivante doit retourner un résultat :
 
     pi@raspberrypi: usb-devices|grep "Vendor=04d9 ProdID=0006"
+
     P:  Vendor=04d9 ProdID=0006 Rev=01.10
 
 2. Assurez-vous d'avoir au préalable choisi la variante alternative
@@ -28,7 +29,9 @@ Validez...
 Au besoin, rendez tous les scripts exécutables dans le dossier.
 
     pi@raspberrypi: cd SCRIPTS
+
     pi@raspberrypi: chmod +x *.sh
+
     pi@raspberrypi: ./main.sh
 
 4. Une fois l'installation terminée, redémarrez votre Pi afin de  
@@ -52,6 +55,12 @@ prendre en compte les changements :
 La correction spécifique porte sur la touche `@ #`.
 Le reste a été rendu possible par la variante choisie au cours de  
 l'étape 2.
+
+# Suppression / désinstallation
+
++ Exécutez à nouveau le script `main.sh` et choisissez l'item de menu:
+
+    '(S)  Supprimer...`
 
 # État du projet
 
