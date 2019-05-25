@@ -6,38 +6,47 @@ Pour ce faire, ouvrez un terminal...
 1. Votre clavier est-il concerné ?  
 La commande suivante doit retourner un résultat :
 
-    pi@raspberrypi: usb-devices|grep "Vendor=04d9 ProdID=0006"
+     pi@raspberrypi: usb-devices|grep "Vendor=04d9 ProdID=0006"
 
-    P:  Vendor=04d9 ProdID=0006 Rev=01.10
+     P:  Vendor=04d9 ProdID=0006 Rev=01.10
 
 2. Assurez-vous d'avoir au préalable choisi la variante alternative
 de la disposition française du clavier en exécutant l'utilitaire de 
 configuration de raspbian :
 
-    pi@raspberrypi: sudo raspi_config
+     pi@raspberrypi: sudo raspi_config
 
 Puis sélectionnez l'item :  
- `4 Localisation Options...`
-Puis l'option`I3  Change Keyboard Layout...`
+
+     `4 Localisation Options...`
+
+Puis l'option : 
+
+     `I3  Change Keyboard Layout...`
+
 Choisissez successivement les options suivantes :
+
 + Modèle du clavier : `PC générique 105 touches (intl)`
 + Disposition du clavier : `Français - Français (variante)`
+
 Validez...
 
 3. Déplacez-vous dans le dossier SCRIPTS pour y exécuter le script  
-`main.sh`...
+
+      main.sh
+
 Au besoin, rendez tous les scripts exécutables dans le dossier.
 
-    pi@raspberrypi: cd SCRIPTS
+     pi@raspberrypi: cd SCRIPTS
 
-    pi@raspberrypi: chmod +x *.sh
+     pi@raspberrypi: chmod +x *.sh
 
-    pi@raspberrypi: ./main.sh
+     pi@raspberrypi: ./main.sh
 
 4. Une fois l'installation terminée, redémarrez votre Pi afin de  
 prendre en compte les changements :
 
-    pi@raspberrypi: sudo shutdown --reboot now
+     pi@raspberrypi: sudo shutdown --reboot now
     
 5. Dans la nouvelle session, testez le clavier :
 
@@ -60,7 +69,7 @@ l'étape 2.
 
 + Exécutez à nouveau le script `main.sh` et choisissez l'item de menu:
 
-    '(S)  Supprimer...`
+     (S)  Supprimer...
 
 # État du projet
 
