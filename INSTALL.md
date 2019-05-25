@@ -4,9 +4,11 @@ Avant d'installer l'ajustement du clavier, vérifiez votre configuration.
 Pour ce faire, ouvrez un terminal...
 
 1. Votre clavier est-il concerné ?  
-La commande suivante doit retourner un résultat :
+La commande suivante... 
 
      		pi@raspberrypi: usb-devices|grep "Vendor=04d9 ProdID=0006"
+		
+...doit retourner un résultat :
 
      		P:  Vendor=04d9 ProdID=0006 Rev=01.10
 
