@@ -1,5 +1,12 @@
 #!/bin/bash
 
+# Ce script doit être exécuté avec les privilèges du compte root
+if ! [ $(id -u) = 0 ]; then
+   echo "Ce script doit être exécuté avec les privilèges du compte root."
+   echo "Syntaxe : sudo /bin/bash $0"
+   exit 1
+fi
+
 # Choix du niveau d'ajustement
 # Choice of the tweak level
 
@@ -14,11 +21,11 @@ if [ $exitstatus = 0 ]; then
 	case $CHOIX in
 	"TWEAK_MIN")
 		# On appelle le script de correction de la touche '@ #'...
-		./cherche.sh "MIN"
+		sudo /bin/bash ./cherche.sh "MIN"
 	;;
 	"TWEAK_NF-Z71-300")
 		# On appelle le script d'apllication de la norme AFNOR, Azerty amélioré
-		./cherche.sh "AFNOR"
+		sudo /bin/bash ./cherche.sh "AFNOR"
 	;;
 esac
 

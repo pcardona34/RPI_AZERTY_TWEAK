@@ -30,8 +30,7 @@ possibilités du clavier AZERTY pour permettre une saisie complète et
 plus facile des caractères de la typographie française.
 
 + La première correction basique sera donc appelée TWEAK_RPI_MIN.
-+ La 
-seconde sera appelée TWEAK_RPI_NF-Z71-300 et permettra d'étendre les 
++ La seconde sera appelée TWEAK_RPI_NF-Z71-300 et permettra d'étendre les 
 possibilités du clavier. Dans ce cas, en attendant une évolution 
 compatible de la disposition imprimée sur les touches du clavier, vous 
 pouvez 
@@ -58,8 +57,7 @@ la table de symboles `fr` (à partir de la ligne 99) et notamment de
 corriger la ligne 136 associée à la touche `TLDE` pour lui affecter les 
 caractères `at` pour @ (niveau 1) et `numbersign` pour # (au niveau deux).
 
-Pour y 
-parvenir, on utilisera un fichier de configuration alternatif et des 
+Pour y parvenir, on utilisera un fichier de configuration alternatif et des 
 scripts Bash pour effectuer les opérations d'installation (sauvegarde 
 de la table standard, substitution) ou de désinstallation 
 (rétablissement de la table standard). 
@@ -75,6 +73,9 @@ supprimer toutes les modifications effectuées simplement.
 # Quand le code sera-t-il disponible ?
 
 + La première correction basique TWEAK_RPI_MIN est effective : code publié le 25/05/2019/
-+ La 
-seconde, TWEAK_RPI_NF-Z71-300, n'est pas encore disponible (Work in progress)
++ La seconde, TWEAK_RPI_NF-Z71-300, est disponible depuis le 10/06/2019
 ​
+# Remerciements
+
++ Merci à "CrazyCat" du forum <https://forum.raspfr.org> pour ses conseils sur 
+l'amélioration du code.

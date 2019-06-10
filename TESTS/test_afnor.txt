@@ -1,0 +1,117 @@
+### RANG 1 
+# rang 1 / niveau 1
+@ àéèê()‘’«»'
+## Test touche morte : circonflexe
+â
+Bilan : ok
+
+# rang 1 / niveau 2 (Shift)
+# 1234567890"
+## Test touche morte : tréma
+ä
+Bilan : ok
+
+# rang 1 / niveau 3 (AltGr)
+§
+
+## Tests touches mortes : aigu / grave
+á
+à
+
+# Suite : 
+&[]_“”° 
+
+Bilan : OK
+
+# rang 1 / niveau 4 (Shift+AltGr)
+
+ÀÉÈÊ— 
+
+Bilan : OK
+
+### RANG 2
+# rang 2 / niveau 1
+azertyuiop-
+
+Bilan : ok
+
+# rang 2 / niveau 2 (Shift)
+AZERTYUIOP–±
+
+Bilan : OK
+
+# rang 2 / niveau 3 (AltGr)
+æ£€®{}ùœ%-†
+
+Bilan : OK
+
+# rang 2 / niveau 4 (Shift+AltGr)
+Æ™ÙŒ‰‑‡
+
+Bilan : OK 
+
+### RANG 3
+# rang 3 / niveau 1
+qsdfghjklm/*
+
+Bilan : ok
+
+# rang 3 / niveau 2 (Shift)
+QSDFGHJKLM\½
+
+Bilan : ok
+
+# rang 3 / niveau 3 (AltGr)
+
+$|∞÷×
+
+## Test mode monnétaire avec AltGr+F (dead_currency) suivi de y
+¤ combiné à y ou e ne donne rien : (ni avec le symbole currency, ni avec 
+dead_currency)
+Conséquence : on dispose plus de ¥
+
+Mais on dispose par ailleurs de € et $ (AltGr avec respectivement e et s)
+
+## Test du mode Caractères grecs avec AltGr+G (dead_greek) suivi de b. etc.
+Echec : ce mode ne fonctionne pas (testé avec les symboles : mu, puis dead_greek)
+
+Bilan : 2 modes non fonctionnels (monétaire et alphabet grec)
+
+# rang 3 / niveau 4 (Shift+AltGr)
+
+√¼
+
+Bilan : OK 
+
+### RANG 4
+# rang 4 / niveau 1
+<wxcvbn.,:;
+
+Bilan : ok
+
+# rang 4 / niveau 2 (Shift)
+
+>WXCVBN?!…=
+
+Bilan : ok
+
+# rang 4 / niveau 3 (AltGr)
+
+≤©ç¿¡·≈
+
+## Test touche morte : cédille (AltGr+v) suivi d’une lettre…
+ȩ 
+Bilan : Ok
+
+## test touche morte : tilde
+ñ
+Bilan : ok
+
+Bilan : OK
+
+# rang 4 / niveau 4 (Shift+AltGr)
+≥≥Ç≠
+
+Bilan : OK
+
+

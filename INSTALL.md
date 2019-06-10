@@ -33,17 +33,11 @@ Choisissez successivement les options suivantes :
 
 Validez...
 
-3. Déplacez-vous dans le dossier SCRIPTS pour y exécuter le script  
+3. Déplacez-vous dans le dossier SCRIPTS pour y exécuter le script `main.sh` avec 
+les privilèges root :
 
-      		pi@raspberrypi: ./main.sh
-
-Au besoin, rendez tous les scripts exécutables dans le dossier.
-
-     		pi@raspberrypi: cd SCRIPTS
-
-     		pi@raspberrypi: chmod +x *.sh
-
-     		pi@raspberrypi: ./main.sh
+      		pi@raspberrypi: cd SCRIPTS
+      		pi@raspberrypi: sudo /bin/bash ./main.sh
 
 4. Une fois l'installation terminée, redémarrez votre Pi afin de  
 prendre en compte les changements :
@@ -51,6 +45,8 @@ prendre en compte les changements :
      		pi@raspberrypi: sudo shutdown --reboot now
     
 5. Dans la nouvelle session, testez le clavier :
+    a) Pour la version minimale :
+
 
 	| Modificateur | Touche | Affichage |
 	|--------------|--------|-----------|
@@ -61,18 +57,28 @@ prendre en compte les changements :
 	| Alt-Gr       | `w`    | «         |
 	| Alt-Gr       | `x`    | »         |
 
-+ **Remarque** :
+    + **Remarque** :
 
-La correction spécifique porte sur la touche `@ #`.
-Le reste a été rendu possible par la variante choisie au cours de  
-l'étape 2.
+    La correction spécifique porte sur la touche `@ #`.
+    Le reste a été rendu possible par la variante choisie au cours de  
+    l'étape 2.
+
+    b) Pour la version Afnor « Azerty amélioré », comparez votre saisie au site de 
+    référence :
+
+    <http://norme-azerty.fr/#explore>
+   
+    Vous trouverez aussi les tests que j’ai effectués dans le dossier TESTS.
 
 # Suppression / désinstallation
 
-+ Exécutez à nouveau le script `main.sh` et choisissez l'item :
++ Exécutez à nouveau le script `main.sh` (cf. étape 3) et choisissez l'item :
 
 		(S)  Supprimer...
 
 # État du projet
 
-+ La variante "AZERTY amélioré" n'est pas encore disponible. 
++ La variante "AZERTY amélioré" est disponible depuis le 10/06/2019. + Elle est 
+fonctionnelle pour la saisie de textes francophones, et secondairement, en 
+anglais, espagnol, occitan, catalan. Par contre, les caractères plus rares 
+(slovène, etc) ne sont pas disponibles.
