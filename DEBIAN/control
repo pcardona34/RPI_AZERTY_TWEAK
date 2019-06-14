@@ -1,0 +1,9 @@
+Package: rpi_azerty_tweak
+Version: 1.0.0
+Section: base
+Priority: optional
+Architecture: all
+Depends: bash
+Maintainer: Patrick Cardona <patrick.cardona@laposte.net>
+Description: Tweak of the official RPI keyboard
+Homepage: https://github.com/pcardona34/RPI_AZERTY_TWEAK

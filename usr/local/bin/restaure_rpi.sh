@@ -15,8 +15,9 @@ else
 fi
 
 # Initialisation des variables
-SYM=/usr/share/X11/xkb/symbols/fr
-SAUVE_INITIALE=$SYM.sauve
+TABLE="$1"
+SYM="/usr/share/X11/xkb/symbols/$TABLE"
+SAUVE_INITIALE="$SYM.sauve"
 
 # On restaure la table par défaut dans la conf de X11
 if test -f $SAUVE_INITIALE
@@ -24,9 +25,11 @@ if test -f $SAUVE_INITIALE
 	 echo "Restauration de la table par défaut..."
 	 cp -a $SAUVE_INITIALE $SYM
 	 rm $SAUVE_INITIALE
-	 echo "Pour appliquer les modifications, le système doit redémarrer..."
-	 echo "Exécutez la commande : 'sudo shutdown --reboot now'"
 else
-	echo "La configuration initiale de la table $(basename $SYM) a été restaurée."
+	whiptail --title "Information" \
+--msgbox "La configuration initiale de la table $(basename $SYM) a été restaurée." 12 60
 fi 
 
+whiptail --title "Information" --msgbox \
+"Pour appliquer les modifications, le système doit redémarrer...\nExécutez la commande : 'sudo shutdown --reboot now'" \
+12 60
