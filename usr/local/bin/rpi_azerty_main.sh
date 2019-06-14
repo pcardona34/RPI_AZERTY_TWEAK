@@ -20,6 +20,66 @@ TABLE="$1"
 
 #### Fonctions / functions ####
 
+### clavier_rpi #################################
+# On vérifie si le clavier est concerné par le correctif MIN
+
+function clavier_rpi
+{
+
+RPI=1
+
+# On vérifie si le clavier est un clavier officiel RPI
+usb-devices|grep -q "Vendor=04d9 ProdID=0006"
+if [ $? = 0 ]
+then
+	RPI=0
+fi
+
+return $RPI
+}
+
+### disposition #################################
+# On vérifie si la disposition est bien "french alternative"
+# c-à-d dans /etc/default/keyboard : 
+# XKBMODEL="pc105"
+# XKBLAYOUT="fr"
+# XKBVARIANT="oss"
+
+function disposition
+{
+
+# Préparation du message d'erreur
+echo -e "Exécutez d'abord :\n sudo raspi_config \nafin de modifier la configuration de " > /tmp/msgclavier.txt
+echo "votre clavier ainsi :" >> /tmp/msgclavier.txt
+echo "- Modèle du clavier : 'PC générique 105 touches (intl)' " >> /tmp/msgclavier.txt
+echo "- Disposition du clavier : 'Français - Français (variante)' " >> /tmp/msgclavier.txt
+
+grep -q /etc/default/keyboard -e "XKBMODEL=\"pc105\""
+if [ $? != 0 ]
+then 
+	whiptail --title "ERREUR" --textbox /tmp/msgclavier.txt 14 60
+	return 1
+fi
+
+grep -q /etc/default/keyboard -e "XKBLAYOUT=\"fr\""
+if [ $? != 0 ]
+then 
+	whiptail --title "ERREUR" --textbox /tmp/msgclavier.txt 14 60
+	return 1
+fi
+
+grep -q /etc/default/keyboard -e "XKBVARIANT=\"oss\""
+if [ $? != 0 ]
+then 
+	whiptail --title "ERREUR" --textbox /tmp/msgclavier.txt 14 60
+	return 1
+fi
+
+# Sinon, c'est OK.
+echo "La disposition et sa variante sont conformes : fr-oss"
+return 0
+}
+
 ### sauvegarde ###################################
 # Permet de sauvegarder la table originale
 # Paramètres :
@@ -44,7 +104,7 @@ if ! test -f "$SAUVE_INITIALE"
 	sauvegarde "$TABLE"
 else
 	echo "La configuration initiale de la table $(basename $SYM) a été sauvegardée."
-fi 
+fi
 
 }
 
@@ -60,7 +120,13 @@ TABLE="$1"
 # Cible de la table de symboles
 CIBLE="/usr/share/X11/xkb/symbols/$TABLE"
 # Dossier des nouveaux symboles
-SYMBOLS="../share/rpi_azerty_tweak/symbols"
+SYMBOLS="/usr/local/share/rpi_azerty_tweak/symbols"
+
+# On vérifie la disposition
+if ! (disposition)
+then
+	exit 1
+fi
 
 echo "Correction de la touche '@ #'"
 
@@ -84,10 +150,16 @@ function afnor
 
 TABLE="$1"
 
-echo "Norme AFNOR Z71-300" >> /tmp/msg_afnor.txt
-echo "Pour en savoir plus, consultez :" > /tmp/msg_afnor.txt
-echo "<http://norme-azerty.fr>" > /tmp/msg_afnor.txt
-echo "La nouvelle norme sera appliquée à l'exception des caractères non francophones." > /tmp/msg_afnor.txt
+# On vérifie la disposition
+if ! (disposition)
+then
+	exit 1
+fi
+
+echo "Norme AFNOR Z71-300" > /tmp/msg_afnor.txt
+echo "Pour en savoir plus, consultez :" >> /tmp/msg_afnor.txt
+echo "<http://norme-azerty.fr>" >> /tmp/msg_afnor.txt
+echo "La nouvelle norme sera appliquée à l'exception des caractères non francophones." >> /tmp/msg_afnor.txt
 
 whiptail --title "Clavier Azerty amélioré" --scrolltext --textbox /tmp/msg_afnor.txt 14 60
 
@@ -95,8 +167,7 @@ whiptail --title "Clavier Azerty amélioré" --scrolltext --textbox /tmp/msg_afn
 # Cible de la table de symboles
 CIBLE="/usr/share/X11/xkb/symbols/$TABLE"
 # Dossier des nouveaux symboles
-SYMBOLS="../share/rpi_azerty_tweak/symbols"
-
+SYMBOLS="/usr/local/share/rpi_azerty_tweak/symbols"
 
 echo -e "\nAdaptation à la norme AFNOR en cours..."
 
@@ -170,7 +241,12 @@ if [ $exitstatus = 0 ]; then
 	case $CHOIX in
 	"TWEAK_MIN")
 		# On appelle le script de correction de la touche '@ #'...
-		cherche "$TABLE" "MIN"
+		if (clavier_rpi)
+		    then echo "Le clavier est concerné par le correctif."
+  		    cherche "$TABLE" "MIN"
+		else
+		    whiptail --title "ERREUR" --msgbox "Votre clavier n'est pas concerné par ce correctif." 8 60
+		fi
 	;;
 	"TWEAK_NF-Z71-300")
 		# On appelle le script d'application de la norme AFNOR, Azerty amélioré
@@ -187,7 +263,6 @@ fi
 
 ############ Fin des fonctions / end of the functions #################
 
-
 # Installation des ajustements du clavier RPI
 
 clear
@@ -195,26 +270,5 @@ clear
 # On vérifie la sauvegarde de la table originale
 sauvegarde "$TABLE"
 
-### Menu principal ###
-
-MODE=$(whiptail --title "RPI AZERTY TWEAK" --menu "Que voulez-vous faire ?" 11 78 2 \
-"(I)" "Installer une amélioration du clavier RPI" \
-"(S)" "Supprimer toute modificatin du clavier RPI" 3>&1 1>&2 2>&3)
-
-exitstatus=$?
-
- if [ $exitstatus = 0 ]; then
-         case $MODE in
-         "(I)")
-                 # On appelle le script d'installation...
-                 menu "$TABLE"
-         ;;
-         "(S)")
-                 # On appelle la restauration
-                 sudo /bin/bash ./restaure_rpi.sh "$TABLE"
-         ;;
- 	 esac
-
- else
-         echo "Vous avez annulé.";exit
- fi
+# On appelle le script d'installation...
+menu "$TABLE"

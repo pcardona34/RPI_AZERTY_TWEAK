@@ -4,29 +4,28 @@ Ajustement de la disposition du clavier officiel RPI - variante FR
 AZERTY (_Layout Tweak of the official RPI keyboard - French AZERTY 
 variant_)
 
-​
-
 # Qui est concerné ?
 
 + Vous avez acquis un clavier officiel de la fondation _Raspberry Pi_, 
 clavier de 79 touches dans la disposition AZERTY, et vous avez constaté 
 que la nouvelle touche gravée avec les caractères `@ #` ne produisait 
 pas la saisie attendue.  
+
 En effet, cette touche produit alors 
 indifféremment le caractère `²`, avec ou sans modificateur "majuscule" 
 (SHIFT).
+
 + Vous utilisez votre _Raspberry Pi_ avec le système 
 préconisé, la distribution _Raspbian_ (_debian_ sur processeur Arm). ​ 
 
 # Quels niveaux de correction sont envisagés ?
 
-1. On peut d'abord envisager un niveau de correction élémentaire : 
-faire en sorte que la touche en question, `@ #` produise la saisie des 
-caractères attendus.  Et on peut aussi en profiter pour régler la perte 
-de la saisie de la ligature œ/Œ... 
-2. On peut aussi envisager 
-d'implémenter la nouvelle norme AFNOR, NFZ71-300, qui étend les 
-possibilités du clavier AZERTY pour permettre une saisie complète et 
+1. On peut d'abord envisager un niveau de correction élémentaire : faire en sorte 
+que la touche en question, `@ #` produise la saisie des caractères attendus.  Et 
+on peut aussi en profiter pour régler la perte de la saisie de la ligature œ/Œ...
+
+2. On peut aussi envisager d'implémenter la nouvelle norme AFNOR, NFZ71-300, qui 
+étend les possibilités du clavier AZERTY pour permettre une saisie complète et 
 plus facile des caractères de la typographie française.
 
 + La première correction basique sera donc appelée TWEAK_RPI_MIN.
@@ -73,8 +72,11 @@ supprimer toutes les modifications effectuées simplement.
 # Quand le code sera-t-il disponible ?
 
 + La première correction basique TWEAK_RPI_MIN est effective : code publié le 25/05/2019/
+
 + La seconde, TWEAK_RPI_NF-Z71-300, est disponible depuis le 10/06/2019
 ​
++ Un paquet d'installation debian est disponible depuis le 14/06/2019.   
+
 # Remerciements
 
 + Merci à "CrazyCat" du forum <https://forum.raspfr.org> pour ses conseils sur 

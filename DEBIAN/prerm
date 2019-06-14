@@ -1,0 +1,5 @@
+#!/bin/bash
+
+TABLE="fr"
+
+sudo /bin/bash /usr/local/bin/restaure_rpi.sh "$TABLE"

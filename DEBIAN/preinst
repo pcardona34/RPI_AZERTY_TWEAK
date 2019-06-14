@@ -1,5 +1,0 @@
-#!/bin/bash
-
-TABLE="fr"
-
-sudo /bin/bash /usr/local/bin/rpi_azerty_main.sh "$TABLE"
