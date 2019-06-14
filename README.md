@@ -75,7 +75,7 @@ supprimer toutes les modifications effectuées simplement.
 
 + La seconde, TWEAK_RPI_NF-Z71-300, est disponible depuis le 10/06/2019
 ​
-+ Un paquet d'installation debian est disponible depuis le 14/06/2019.   
++ Un [paquet d'installation debian](https://github.com/pcardona34/rpiazertytweak/releases/latest) est disponible depuis le 14/06/2019.   
 
 # Remerciements
 
