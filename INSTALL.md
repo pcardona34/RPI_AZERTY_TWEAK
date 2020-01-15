@@ -9,7 +9,7 @@ De même, la disposition du clavier est désormais automatiquement paramétrée 
 		
 		Français - Français (variante)`
 
-## 2. Installation
+## 2. Installation à partir du paquet *debian* fourni :
 
 Pour bénéficier de l'une des améliorations du clavier, il suffit 
 d'installer le paquet ainsi :
@@ -69,3 +69,33 @@ secondairement, en anglais, espagnol, occitan, catalan. Par contre, les
 caractères plus rares (slovène, etc) ne sont pas encore disponibles.
 
 + Un paquet d'installation rpiazertytweak.deb est disponible depuis le 14 juin 2019.
+
+# Création du paquet *debian* et installation / désinstallation 
+
+Si vous souhaitez personnaliser la correction, vous pouvez modifier le source et procéder comme indiqué ci-dessous pour créer le nouveau paquet, l'installer, etc.
+
+# Création du paquet d'installation Debian
+
+Vous pouvez créer vous-même le paquet *debian*  et l'installer ainsi :
+
+1. Clonez le dossier source ainsi :
+
+		git clone https://github.com/pcardona34/rpiazertytweak
+
+2. Déplacez-vous dans ce dossier :
+
+		cd rpiazertytweak
+
+3. Créez le paquet *debian*  ainsi :
+
+		make
+
+4. Pour l'installer, déplacez-vous dans le dossier racine et suivez les instructions de la section :
+
+		make install
+		
+5. Redémarrez le système pour appliquer les changements :
+		
+		sudo shutdown --reboot now
+
+

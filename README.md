@@ -8,8 +8,7 @@ variant_)
 
 + Vous avez acquis un clavier officiel de la fondation _Raspberry Pi_, 
 clavier de 79 touches dans la disposition AZERTY, et vous avez constaté 
-que la nouvelle touche gravée avec les caractères `@ #` ne produisait 
-pas la saisie attendue.  
+que la nouvelle touche gravée avec les caractères `@ #` (au-dessus de la touche `Tab`)ne produisait pas pas la saisie attendue.  
 
 En effet, cette touche produit alors 
 indifféremment le caractère `²`, avec ou sans modificateur "majuscule" 
@@ -20,19 +19,21 @@ préconisé, la distribution _Raspbian_ (_debian_ sur processeur Arm). ​
 
 # Quels niveaux de correction sont envisagés ?
 
-1. On peut d'abord envisager un niveau de correction élémentaire : faire en sorte 
-que la touche en question, `@ #` produise la saisie des caractères attendus.  Et 
-on peut aussi en profiter pour régler la perte de la saisie de la ligature œ/Œ...
+1. On peut d'abord envisager un niveau de correction élémentaire : faire 
+en sorte que la touche en question, `@ #` produise la saisie des 
+caractères attendus.  Et on peut aussi en profiter pour régler la perte 
+de la saisie de la ligature œ/Œ...
 
-2. On peut aussi envisager d'implémenter la nouvelle norme AFNOR, NFZ71-300, qui 
-étend les possibilités du clavier AZERTY pour permettre une saisie complète et 
-plus facile des caractères de la typographie française.
+2. On peut aussi envisager d'implémenter la nouvelle norme AFNOR, 
+NFZ71-300, qui étend les possibilités du clavier AZERTY pour permettre 
+une saisie complète et plus facile des caractères de la typographie 
+française.
 
 + La première correction basique sera donc appelée TWEAK_RPI_MIN.
 + La seconde sera appelée TWEAK_RPI_NF-Z71-300 et permettra d'étendre les 
 possibilités du clavier. Dans ce cas, en attendant une évolution 
 compatible de la disposition imprimée sur les touches du clavier, vous 
-pouvez 
+pouvez  
 [commander](https://www.tastaturaufkleber.eu/Tastaturaufkleber/Tastaturaufkleber-PC/Franzoesisch/Tastaturaufkleber-Franzoesisch-AZERTY-ameliore::286.html) 
 ou créer vous-même vos étiquettes compatibles avec le clavier "AZERTY 
 amélioré" (voir les références ci-dessous).
@@ -76,6 +77,8 @@ supprimer toutes les modifications effectuées simplement.
 + La seconde, TWEAK_RPI_NF-Z71-300, est disponible depuis le 10/06/2019
 ​
 + Un [paquet d'installation debian](https://github.com/pcardona34/rpiazertytweak/releases/latest) est disponible depuis le 14/06/2019.   
+
++ Voyez le fichier `INSTALL.md` pour de plus amples informations sur les méthodes d'installation.
 
 # Remerciements
 
