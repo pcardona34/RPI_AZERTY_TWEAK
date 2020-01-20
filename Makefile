@@ -1,14 +1,18 @@
 EXEC=rpiazertytweak
 
 all:
-	chmod 755 DEBIAN/postinst
-	chmod 755 DEBIAN/prerm
-	cd .. && dpkg-deb --build $(EXEC)
+	chmod 755 debian/DEBIAN/postinst
+	chmod 755 debian/DEBIAN/prerm
+	dpkg-deb --build debian
+	mv debian.deb $(EXEC).deb
 
-install: ../$(EXEC).deb
-	cd .. && sudo dpkg -i $(EXEC).deb
-
+install: $(EXEC).deb
+	sudo dpkg -i $(EXEC).deb
 
 clean:
-	cd .. && rm $(EXEC).deb
+	rm $(EXEC).deb
+	
+uninstall:
+	sudo dpkg -r $(EXEC)
+
 
